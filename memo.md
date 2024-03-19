@@ -34,4 +34,15 @@ export const store = configureStore({
 reduxToolKit を見ると
 この時点で store に登録されていることがわかる
 
-##
+## Selector
+
+値を参照したい時は`useSelector`を使う
+
+```javascript --taskList.js
+import { useSelector } from 'react-redux';
+import { selecttasks } from '../../features/task/taskSlice';
+```
+
+```javascript --taskSlice.js
+export const selecttasks = (state) => state.task.tasks;
+```

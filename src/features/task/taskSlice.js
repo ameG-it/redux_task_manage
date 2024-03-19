@@ -27,12 +27,12 @@ export const taskSlice = createSlice({
       }
     },
     deletetask: (state, action) => {
-      state.tasks = state.tasks.filter((t) => t.id == action.payload.id);
+      state.tasks = state.tasks.filter((t) => t.id === action.payload.id);
     },
   },
 });
 
-export const { newTask, completeTas, deletetask } = taskSlice.actions;
+export const { newTask, completeTask, deletetask } = taskSlice.actions;
 
 export const selecttasks = (state) => state.task.tasks;
 
