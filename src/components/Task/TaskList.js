@@ -8,7 +8,7 @@ export const TaskList = () => {
   return (
     <>
       {tasks.map((task) => {
-        return <TaskItem id={task.id} task={task} />;
+        return <TaskItem key={task.id} task={task} />;
       })}
     </>
   );

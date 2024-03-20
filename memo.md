@@ -57,3 +57,32 @@ dispatch で reducer を呼び出すと
 const dispath = useDispatch();
 dispatch(reducer(status));
 ```
+
+## createAsyncThunk
+
+[公式 doc](https://redux-toolkit.js.org/api/createAsyncThunk)\
+非同期の関数を redux で扱うための関数
+非同期処理の実行状況（fulfilled, rejected, settled）に応じたアクションを返すことができる
+
+- 第一引数:プレフィックス
+- 第二引数:非同期関数
+
+```javascript
+const fetchAsyncGet = createAsyncThunk('fetch/get', () => {
+  pasync () => {
+    const res = await axios.get(apiUrl);
+    return res.data;
+  };
+});
+
+const Slice = createSlice({
+  name:"name",
+  initialState:{},
+  reducers:{},
+  extrareducers:(builder)=>{
+        builder.addCase(fetchAsyncGet.fulfilled, (state,action)=>{
+            //
+        });
+    },
+})
+```
