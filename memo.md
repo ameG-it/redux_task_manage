@@ -46,3 +46,14 @@ import { selecttasks } from '../../features/task/taskSlice';
 ```javascript --taskSlice.js
 export const selecttasks = (state) => state.task.tasks;
 ```
+
+## dispatch
+
+値を更新したい時は`useDispatch`を使う
+dispatch で reducer を呼び出すと
+アクションが動く
+
+```javascript
+const dispath = useDispatch();
+dispatch(reducer(status));
+```
